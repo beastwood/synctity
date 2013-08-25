@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CommandForm</class>
+ <widget class="QWidget" name="CommandForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>677</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>rsync command</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabPaths">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Paths</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Source</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Path</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="textSourcePath"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Host</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="QLineEdit" name="textSourceHost"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>User</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="2">
+           <widget class="QLineEdit" name="textSourceUser"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="buttonSourcePath">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Destination</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Path</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="textDestinationPath"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Host</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2">
+           <widget class="QLineEdit" name="textDestinationHost"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>User</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="QLineEdit" name="textDestinationUser"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="buttonDestinationPath">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabCommon">
+      <attribute name="title">
+       <string>Common</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabAdvanced">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QLineEdit" name="textName"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Value</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="3">
+        <widget class="QLineEdit" name="textValue"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="buttonAdd">
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="buttonEdit">
+         <property name="text">
+          <string>Edit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="buttonRemove">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>374</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0" colspan="4">
+        <widget class="QTableView" name="tableOptions">
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderHighlightSections">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderHighlightSections">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>649</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>-1</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelCommand">
+         <property name="text">
+          <string>rsync command</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonOK">
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonOK</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>622</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textSourcePath</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onSourcePath(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textSourceHost</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onSourceHost(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textSourceUser</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onSourceUser(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textDestinationPath</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onDestinationPath(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textDestinationHost</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onDestinationHost(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textDestinationUser</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onDestinationUser(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSourcePath</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onChooseSource()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonDestinationPath</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onChooseDestination()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonAdd</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onAddOption()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonEdit</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onEditOption()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRemove</sender>
+   <signal>clicked()</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onRemoveOption()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableOptions</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>CommandForm</receiver>
+   <slot>onSelectOption(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onChooseSource()</slot>
+  <slot>onChooseDestination()</slot>
+  <slot>accept()</slot>
+  <slot>onSourcePath(QString)</slot>
+  <slot>onSourceHost(QString)</slot>
+  <slot>onSourceUser(QString)</slot>
+  <slot>onDestinationPath(QString)</slot>
+  <slot>onDestinationHost(QString)</slot>
+  <slot>onDestinationUser(QString)</slot>
+  <slot>onAddOption()</slot>
+  <slot>onEditOption()</slot>
+  <slot>onRemoveOption()</slot>
+  <slot>onSelectOption(QModelIndex)</slot>
+ </slots>
+</ui>
