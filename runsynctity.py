@@ -6,14 +6,14 @@ Created on Aug 6, 2010
 import sys
 from PyQt4.QtGui import QApplication
 
-from synctus import SynctusWindow, APPLICATION_NAME, APPLICATION_VERSION 
+from synctus import SynctityWindow, APPLICATION_NAME, APPLICATION_VERSION 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName(APPLICATION_NAME)
     app.setApplicationVersion(APPLICATION_VERSION)
     
-    myapp = SynctusWindow()
+    myapp = SynctityWindow()
     myapp.setWindowTitle(APPLICATION_NAME + " " + APPLICATION_VERSION)
     myapp.show()
     myapp.raise_()

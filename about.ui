@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>368</width>
-    <height>204</height>
+    <width>375</width>
+    <height>206</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,9 @@
    </item>
    <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QLabel" name="labelApplication">
        <property name="font">
@@ -41,6 +44,13 @@
       </widget>
      </item>
      <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="labelVersion">
        <property name="text">
         <string>version</string>
@@ -48,19 +58,37 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelInfo">
+      <widget class="QLabel" name="labelCopyright">
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Brian S. Eastwood&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;© 2010&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>copyright</string>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelAuthors">
+       <property name="text">
+        <string>Brian S. Eastwood</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QLabel" name="labelWebsite">

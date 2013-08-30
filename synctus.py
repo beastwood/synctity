@@ -30,8 +30,8 @@ import rsync
 import about_ui
 
 APPLICATION_NAME="Synctity"
-APPLICATION_VERSION="1.02"
-APPLICATION_WEBSITE="http://sourceforge.net/projects/synctus"
+APPLICATION_VERSION="1.03"
+APPLICATION_WEBSITE="https://github.com/beastwood/synctity"
 DEFAULT_CONFIG=os.path.expanduser("~/synctity.txt")
 
 class ProfileModel(QtCore.QAbstractListModel):
@@ -303,9 +303,9 @@ class ProfileRunner:
             self.process.start(command)
         
         
-class SynctusWindow(QtGui.QMainWindow):
+class SynctityWindow(QtGui.QMainWindow):
     '''
-    The main Synctus window, which enables editing and running profiles of
+    The main Synctity window, which enables editing and running profiles of
     rsync commands.
     '''
     def __init__(self, parent=None):
@@ -551,7 +551,9 @@ class SynctusWindow(QtGui.QMainWindow):
         ui.setupUi(dialog)
         
         # set dynamic content
+        today = QtCore.QDate.currentDate()
         ui.labelApplication.setText(APPLICATION_NAME)
+        ui.labelCopyright.setText("&copy; 2010 - {0}".format(today.year()))
         ui.labelVersion.setText("version {0}".format(APPLICATION_VERSION))
         ui.labelWebsite.setText("<a href={0}>{0}</a>".format(APPLICATION_WEBSITE))
         ui.labelWebsite.setOpenExternalLinks(True)

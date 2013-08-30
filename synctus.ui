@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Synctus</class>
- <widget class="QMainWindow" name="Synctus">
+ <class>Synctity</class>
+ <widget class="QMainWindow" name="Synctity">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -312,7 +312,7 @@
   <connection>
    <sender>buttonAddProfile</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onAddProfile()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -328,7 +328,7 @@
   <connection>
    <sender>buttonRemoveProfile</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onRemoveProfile()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -344,7 +344,7 @@
   <connection>
    <sender>textProfileName</sender>
    <signal>editingFinished()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onProfileName()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -360,7 +360,7 @@
   <connection>
    <sender>buttonAddCommand</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onAddCommand()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -376,7 +376,7 @@
   <connection>
    <sender>buttonRemoveCommand</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onRemoveCommand()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -392,7 +392,7 @@
   <connection>
    <sender>listProfiles</sender>
    <signal>clicked(QModelIndex)</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onSelectProfile(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -408,7 +408,7 @@
   <connection>
    <sender>listCommands</sender>
    <signal>doubleClicked(QModelIndex)</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onEditCommand(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -424,7 +424,7 @@
   <connection>
    <sender>buttonForward</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onForward()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -440,7 +440,7 @@
   <connection>
    <sender>buttonReverse</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onReverse()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -456,7 +456,7 @@
   <connection>
    <sender>actionLoad</sender>
    <signal>triggered()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onLoad()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -472,7 +472,7 @@
   <connection>
    <sender>actionSave</sender>
    <signal>triggered()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onSave()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -488,7 +488,7 @@
   <connection>
    <sender>actionSaveAs</sender>
    <signal>triggered()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onSaveAs()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -504,7 +504,7 @@
   <connection>
    <sender>actionRunAway</sender>
    <signal>triggered()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onQuit()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -520,7 +520,7 @@
   <connection>
    <sender>textPreSync</sender>
    <signal>editingFinished()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onTextSync()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -536,7 +536,7 @@
   <connection>
    <sender>textPostSync</sender>
    <signal>editingFinished()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onTextSync()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -552,7 +552,7 @@
   <connection>
    <sender>buttonPreSync</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onPreSync()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -568,7 +568,7 @@
   <connection>
    <sender>buttonPostSync</sender>
    <signal>clicked()</signal>
-   <receiver>Synctus</receiver>
+   <receiver>Synctity</receiver>
    <slot>onPostSync()</slot>
    <hints>
     <hint type="sourcelabel">
