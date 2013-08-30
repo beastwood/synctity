@@ -313,6 +313,7 @@ class SynctityWindow(QtGui.QMainWindow):
         # set up user interface
         self.ui = Ui_Synctus()
         self.ui.setupUi(self)
+        self.setWindowTitle("{0} {1}".format(APPLICATION_NAME, APPLICATION_VERSION))
                 
         # set up profile and command views
         self.profileModel = ProfileModel(self)
@@ -566,11 +567,23 @@ class SynctityWindow(QtGui.QMainWindow):
         '''
         Opens the help manual.
         '''
-        # find the manual index page relative to this file.
-        filepath = os.path.split(os.path.abspath(__file__))[0]
-        helpurl = "file://" + os.path.join(filepath, "doc/html/index.html")
-        print "Openning", helpurl
-        QtGui.QDesktopServices.openUrl(QtCore.QUrl(helpurl))
+        # find the manual index page
+        basepath = os.getenv("RESOURCEPATH")
+        if basepath is not None:
+            # in a Mac app bundle look in the Resources directory
+            helpfile = os.path.join(basepath, "html/index.html")
+        else:
+            # otherwise use the current file directory
+            basepath = os.path.split(os.path.abspath(__file__))[0]        
+            helpfile = os.path.join(basepath, "doc/html/index.html")
+        
+        # check whether the index file exists
+        if os.path.exists(helpfile):
+            helpfile = "file://" + helpfile
+            print "Opening", helpfile
+            QtGui.QDesktopServices.openUrl(QtCore.QUrl(helpfile))
+        else:
+            QtGui.QMessageBox.warning(self, "Could not find manual", "Could not find the help manual in\n{0}".format(helpfile))
 
     def onQuit(self):
         QtGui.qApp.exit(0)

@@ -14,7 +14,6 @@ if __name__ == "__main__":
     app.setApplicationVersion(APPLICATION_VERSION)
     
     myapp = SynctityWindow()
-    myapp.setWindowTitle(APPLICATION_NAME + " " + APPLICATION_VERSION)
     myapp.show()
     myapp.raise_()
     myapp.setFocus()

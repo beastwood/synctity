@@ -10,7 +10,8 @@ from setuptools import setup
 APP = ['runsynctity.py']
 DATA_FILES = []
 OPTIONS = {'argv_emulation': True,
- 'iconfile': '/Users/beastwoo/source/synctity/install/synctity.icns'}
+           'iconfile': '/Users/beastwoo/source/synctity/install/synctity.icns',
+           "resources": "doc/html"}
 
 setup(
     app=APP,
