@@ -22,9 +22,9 @@ from collections import deque
 import os
 import shelve
 import sys
-
 from PyQt4 import QtCore, QtGui
-from CommandForm import CommandForm
+
+import command
 import rsync
 import about_ui
 import synctity_ui
@@ -197,11 +197,13 @@ class CommandModel(QtCore.QAbstractListModel):
         '''
         if self.isValid(index):
             # build a command form for editing the command
-            command = self.profile.get(index)
-            commandEdit = CommandForm()
-            commandEdit.setCommand(command)
+            selected = self.profile.get(index)
+            dialog = command.CommandForm()
+            dialog.setCommand(selected)
+            
             # launch as a modal dialog
-            commandEdit.exec_()
+            dialog.exec_()
+            
             # notify any views that we have changed
             self.emit(QtCore.SIGNAL("dataChanged(QModelIndex, QModelIndex)"), 
                       self.index(index, 0), self.index(index, 0))
