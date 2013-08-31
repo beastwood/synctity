@@ -588,3 +588,16 @@ class SynctityWindow(QtGui.QMainWindow):
     def onQuit(self):
         QtGui.qApp.exit(0)
         
+def runSynctity():
+    app = QtGui.QApplication(sys.argv)
+    app.setApplicationName(APPLICATION_NAME)
+    app.setApplicationVersion(APPLICATION_VERSION)
+    
+    myapp = SynctityWindow()
+    myapp.show()
+    myapp.raise_()
+    myapp.setFocus()
+    sys.exit(app.exec_())
+        
+if __name__ == "__main__":
+    runSynctity()

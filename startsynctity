@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ~/synctity
-python runsynctity.py
+python synctity.py
 
