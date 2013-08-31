@@ -24,10 +24,10 @@ import shelve
 import sys
 
 from PyQt4 import QtCore, QtGui
-from synctus_ui import Ui_Synctus
 from CommandForm import CommandForm
 import rsync
 import about_ui
+import synctity_ui
 
 APPLICATION_NAME="Synctity"
 APPLICATION_VERSION="1.03"
@@ -311,7 +311,7 @@ class SynctityWindow(QtGui.QMainWindow):
     def __init__(self, parent=None):
         QtGui.QMainWindow.__init__(self, parent)
         # set up user interface
-        self.ui = Ui_Synctus()
+        self.ui = synctity_ui.Ui_Synctity()
         self.ui.setupUi(self)
         self.setWindowTitle("{0} {1}".format(APPLICATION_NAME, APPLICATION_VERSION))
                 
