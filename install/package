@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Package Synctity for Linux-based systems
+
+target=synctity.tar
+echo Creating $target...
+
+directory=$(pwd)/
+cd ../..
+tar chvf $target synctity/*.py synctity/doc/html synctity/startsynctity synctity/COPYING
+
+mv $target $directory
+cd $directory
+
+# Package Synctity for Mac OS X
+
+bundle=$directory/Synctity.app
+diskimg=synctity.dmg
+
+# update bundle with latest source and documentation
+cd ..
+cp -p install/synctity.icns $bundle/Contents/Resources/applet.icns
+cp -p *.pyc $bundle/Contents/Resources/src/
+cp -p runsynctity.py $bundle/Contents/Resources/src/
+cp -R -L -p doc/html $bundle/Contents/Resources/src/doc
+cd $directory
+
+# archive the bundle
+tar cvf $bundle.tar $bundle
+
+# update the installer disk image
+hdiutil attach $diskimg
+cp -R $bundle /Volumes/Synctity
+hdiutil unmount /Volumes/Synctity

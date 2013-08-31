@@ -7,11 +7,26 @@ Usage:
 
 from setuptools import setup
 
-APP = ['runsynctity.py']
+APP = ['synctity.py']
 DATA_FILES = []
 OPTIONS = {'argv_emulation': True,
            'iconfile': '/Users/beastwoo/source/synctity/install/synctity.icns',
-           "resources": "doc/html"}
+           "resources": "doc/html",
+           "excludes": ["PyQt4.QtCLucene",
+                        "PyQt4.QtDeclarative",
+                        "PyQt4.QtDesigner",
+                        "PyQt4.QtHelp",
+                        "PyQt4.QtMultimedia",
+                        "PyQt4.QtNetwork",
+                        "PyQt4.QtOpenGL",
+                        "PyQt4.QtScript",
+                        "PyQt4.QtScriptTools",
+                        "PyQt4.QtSql",
+                        "PyQt4.QtSvg",
+                        "PyQt4.QtTest",
+                        "PyQt4.QtWebKit",
+                        "PyQt4.QtXml",
+                        "PyQt4.QtXmlPatterns",]}
 
 setup(
     app=APP,

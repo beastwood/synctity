@@ -32,7 +32,7 @@ import synctity_ui
 APPLICATION_NAME="Synctity"
 APPLICATION_VERSION="1.03"
 APPLICATION_WEBSITE="https://github.com/beastwood/synctity"
-DEFAULT_CONFIG=os.path.expanduser("~/synctity.txt")
+DEFAULT_CONFIG=os.path.expanduser("~/synctity.db")
 
 class ProfileModel(QtCore.QAbstractListModel):
     '''
