@@ -12,7 +12,7 @@ Synctity is a front end for :command:`rsync`, so users who are familiar with tha
 
 .. seealso::
 
-	Synctity is hosted on `Sourceforge <http://sourceforge.net/projects/synctus/>`_.  Go there to download the latest versions of the software.
+	Synctity is hosted on `GitHub <http://github.com/beastwood/synctity/>`_.  Go there to download the latest versions of the software.
 	
 .. seealso::
 

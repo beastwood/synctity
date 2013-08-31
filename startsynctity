@@ -1,4 +1,4 @@
 #!/bin/bash
-cd ~/synctity
-python synctity.py
+cd ~/source/synctity
+python2.7 synctity.py
 
