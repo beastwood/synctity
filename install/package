@@ -1,34 +1,36 @@
 #!/bin/bash
 
-# Package Synctity for Linux-based systems
+# Script for packaging Synctity.
+#
+# Usage: $ package [tar | dmg]
+#
+# The dmg option (default) creates a dmg for Mac OS X.
+# The tar option creates a tar of the source code to distribute for Linix-like systems.
 
-target=synctity.tar
-echo Creating $target...
+type=${1:-"dmg"}
+basedir="$( cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd )"
+echo "Base directory: $basedir"
 
-directory=$(pwd)/
-cd ../..
-tar chvf $target synctity/*.py synctity/doc/html synctity/startsynctity synctity/COPYING
+if [ $type == "tar" ]; then
+	echo "Packaging tar for Linux..."
+	
+	archive=$basedir/install/synctity.tar
+	cd $basedir/..
+	"$(pwd)"
+	tar chvf $archive synctity/*.py synctity/doc/html synctity/startsynctity synctity/LICENSE
+else
+	echo "Packaging dmg for Mac OS X..."
 
-mv $target $directory
-cd $directory
+	bundle=$basedir/dist/Synctity.app
+	diskimg=$basedir/install/synctity.dmg
 
-# Package Synctity for Mac OS X
+	# update the installer disk image
+	hdiutil attach $diskimg
+	rm -r /Volumes/Synctity/Synctity.app
+	cp -R $bundle /Volumes/Synctity
+	hdiutil unmount /Volumes/Synctity
+fi
 
-bundle=$directory/Synctity.app
-diskimg=synctity.dmg
+echo "Done."
+exit
 
-# update bundle with latest source and documentation
-cd ..
-cp -p install/synctity.icns $bundle/Contents/Resources/applet.icns
-cp -p *.pyc $bundle/Contents/Resources/src/
-cp -p runsynctity.py $bundle/Contents/Resources/src/
-cp -R -L -p doc/html $bundle/Contents/Resources/src/doc
-cd $directory
-
-# archive the bundle
-tar cvf $bundle.tar $bundle
-
-# update the installer disk image
-hdiutil attach $diskimg
-cp -R $bundle /Volumes/Synctity
-hdiutil unmount /Volumes/Synctity

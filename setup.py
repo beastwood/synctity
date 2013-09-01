@@ -29,6 +29,8 @@ OPTIONS = {'argv_emulation': True,
                         "PyQt4.QtXmlPatterns",]}
 
 setup(
+    name="Synctity",
+    version="1.03",
     app=APP,
     data_files=DATA_FILES,
     options={'py2app': OPTIONS},
