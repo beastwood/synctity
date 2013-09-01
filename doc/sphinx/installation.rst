@@ -8,11 +8,11 @@ Synctity runs on Unix-based systems such as Mac OS X and Linux. On Mac OS X, Syn
 Mac OS X Installer
 ------------------
 
-Download the latest Mac installer (``synctity-01.03.dmg``) from `GitHub <https://github.com/beastwood/synctity/tree/master/install>`_. Open the disk image, and drag the Synctity icon into your :guilabel:`Applications` folder. Launch the application by double-clicking on the icon.
+Download the latest Mac installer (``synctity-01.03.dmg``) from `GitHub <https://github.com/beastwood/synctity/releases>`_. Open the disk image, and drag the Synctity icon into your :guilabel:`Applications` folder. Launch the application by double-clicking on the icon.
 
 .. note::
 
-	The Mac OS X application bundle does not contain the source code for Synctity. The source code is hosted on `GitHub <https://github.com/beastwood/synctity>`_.
+	The Mac OS X application bundle does not contain the source code for Synctity. The source code is also hosted on `GitHub <https://github.com/beastwood/synctity>`_.
 
 Installing from Source (Linux or Mac)
 -------------------------------------
