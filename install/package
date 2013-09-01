@@ -2,12 +2,14 @@
 
 # Script for packaging Synctity.
 #
-# Usage: $ package [tar | dmg]
+# Usage: $ package [app | dmg | tar]
 #
-# The dmg option (default) creates a dmg for Mac OS X.
-# The tar option creates a tar of the source code to distribute for Linix-like systems.
+# The app option (default) creates a Mac application bundle using py2app.
+# The dmg option copies the Mac bundle to a dmg for Mac OS X.
+# The tar option creates a tar of the source code and documentation
+# to distribute for Linux-like systems.
 
-type=${1:-"dmg"}
+type=${1:-"app"}
 basedir="$( cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd )"
 echo "Base directory: $basedir"
 
@@ -15,10 +17,12 @@ if [ $type == "tar" ]; then
 	echo "Packaging tar for Linux..."
 	
 	archive=$basedir/install/synctity.tar
+	
+	# archive the source and documentation
 	cd $basedir/..
 	"$(pwd)"
 	tar chvf $archive synctity/*.py synctity/doc/html synctity/startsynctity synctity/LICENSE
-else
+elif [ $type == "dmg" ]; then
 	echo "Packaging dmg for Mac OS X..."
 
 	bundle=$basedir/dist/Synctity.app
@@ -28,7 +32,13 @@ else
 	hdiutil attach $diskimg
 	rm -r /Volumes/Synctity/Synctity.app
 	cp -R $bundle /Volumes/Synctity
-	hdiutil unmount /Volumes/Synctity
+	hdiutil unmount /Volumes/Synctity	
+else
+	echo "Creating application bundle for Mac OS X..."
+	
+	cd $basedir
+	rm -r build dist
+	python2.7 setup.py py2app
 fi
 
 echo "Done."
